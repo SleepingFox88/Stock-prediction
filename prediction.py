@@ -15,26 +15,14 @@ close_px = df['Adj Close']
 mavg = close_px.rolling(window=100).mean()
 
 
-# from IPython import get_ipython
-# get_ipython().run_line_magic('matplotlib', 'inline')
-
-# import matplotlib.pyplot as plt
-# from matplotlib import style
-
-# # Adjusting the size of matplotlib
-# import matplotlib as mpl
-# mpl.rc('figure', figsize=(8, 7))
-# mpl.__version__
-
-# # Adjusting the style of matplotlib
-# style.use('ggplot')
-
-# close_px.plot(label='AAPL')
-# mavg.plot(label='mavg')
-# plt.legend()
-
 import matplotlib.pyplot as plt
-plt.plot(mavg)
+from matplotlib import style
+
+# Adjusting the style of matplotlib
+style.use('ggplot')
+
+mavg.plot(label='mavg')
+close_px.plot(label='close_px')
 plt.ylabel('Value')
 plt.xlabel('Year')
 plt.show()
