@@ -109,4 +109,30 @@ y_pred_lag=np.roll(y_test,1)
 get_performance(y_pred_lag)
 get_plot(y_pred_lag)
 
+# test linear regression model
+model_lr = LinearRegression()
+model_lr.fit(x_train, y_train)
+#generate predictions
+y_pred_lr = model_lr.predict(x_test)
+# results
+get_performance(y_pred_lr)
+get_plot(y_pred_lr)
 
+# Ridge Regression¶
+model_ridge = Ridge()
+model_ridge.fit(x_train, y_train)
+#generate predictions
+y_pred_ridge=model_ridge.predict(x_test)
+# results
+get_performance(y_pred_ridge)
+get_plot(y_pred_ridge)
+
+
+# Model #2 - Gradient Boosting Trees
+model_gb = GradientBoostingRegressor()
+model_gb.fit(x_train, y_train)
+# Infer
+y_pred_gb = model_gb.predict(x_test)
+# results
+get_performance(y_pred_gb)
+get_plot(y_pred_gb)
