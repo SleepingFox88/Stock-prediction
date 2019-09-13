@@ -39,6 +39,20 @@ get_data("AAPL.csv")
 window_size=32
 num_samples=len(dates)-window_size
 
+# get X data
+x_data = []
+for x in range(num_samples - 1):
+    past32Prices = []
+    for x2 in range(x,x+32):
+        past32Prices.append(prices[x])
+    x_data.append(past32Prices)
+
+# get y data
+y_data = []
+for x in range(num_samples - 1):
+    y_data.append(prices[x+33])
+
+
 # we want to use 80% of our data for training, and 20% for testing
 # This finds the array index where we should split our data
 split_fraction = 0.8
