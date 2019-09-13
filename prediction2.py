@@ -59,7 +59,7 @@ split_fraction = 0.8
 ind_split=int(split_fraction * num_samples)
 
 # set trainging and test data
-x_train = dates[:ind_split]
-y_train = prices[:ind_split]
-x_test = dates[ind_split:]
-y_test = prices[ind_split:]
+x_train = x_data[:ind_split]
+y_train = y_data[:ind_split]
+x_test = x_data[ind_split:]
+y_test = y_data[ind_split:]
