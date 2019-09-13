@@ -1,12 +1,3 @@
-# import csv
-# import numpy as np
-# from sklearn import linear_model #regression line
-# import matplotlib.pyplot as plt
-# from datetime import datetime
-
-# #Modeling Metrics
-# from sklearn import metrics
-
 from datetime import datetime
 import csv
 import numpy as np
@@ -16,14 +7,9 @@ import matplotlib.pyplot as plt
 
 #Data import
 from pandas_datareader import data as pdr
-# import fix_yahoo_finance as yf
 
 # !pip install yfinance --upgrade --no-cache-dir
 # yf.pdr_override()
-
-#For mounting to drive
-# from google.colab import drive
-
 
 #Modeling
 from sklearn.linear_model import LinearRegression, Ridge, Lasso
@@ -88,7 +74,6 @@ for x in range(num_samples):
 # get y data
 y_data = []
 for x in range(num_samples):
-    print(x)
     y_data.append(prices[x + window_size])
 
 
