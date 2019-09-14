@@ -89,6 +89,14 @@ y_train = y_data[:ind_split]
 x_test = x_data[ind_split:]
 y_test = y_data[ind_split:]
 
+# it apprears my x dataset is messed up
+print(x_train[0])
+
+print("x_test[0]")
+print(x_test[0])
+
+print("ytest[0]")
+print(y_test[0])
 
 # base tests
 print("\nBase tests")
