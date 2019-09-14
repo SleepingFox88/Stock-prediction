@@ -2,7 +2,7 @@
 
 ## Description
 
-This repository does stock prediciton on price data from [AAPL.csv](./AAPL.csv). We expirament with price prediciton using various trained models from sklearn. This project prints out an error plot and error perfromance stats for each trained model.
+[Prediction.py](./prediction.py) does stock prediciton on price data from [AAPL.csv](./AAPL.csv). We expirament with price prediciton using various trained models from sklearn. This project prints out an error plot and error perfromance stats for each trained model.
 
 ### Prediction models used:
 
@@ -12,6 +12,12 @@ This repository does stock prediciton on price data from [AAPL.csv](./AAPL.csv).
 - gradient boosting trees
 
 Ridge regresssion was found to have the least Mean Squared Error, and thus best prediciton performance. Price predictions via ridge regresssion are graphed at the end of the program.
+
+### Input price data
+
+![data](https://i.imgur.com/B3EJqZI.jpg)
+
+### Future prediction using ridge regresssion
 
 ![predictions](https://i.imgur.com/L0CA9iA.jpg)
  
