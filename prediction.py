@@ -36,7 +36,10 @@ def get_data(filename):
             prices.append(float(rows[x][headerFields.index("Adj Close")]))
     return
 
-#Help Functions
+def showPrediciton(preds):
+    plt.plot(preds, color="blue", linewidth=2)
+    plt.show()
+
 def get_performance (model_pred):
   #Function returns standard performance metrics
   print('Mean Absolute Error:', metrics.mean_absolute_error(y_test, model_pred).round(4))  
@@ -75,7 +78,7 @@ for x in range(num_samples):
 split_fraction = 0.8
 ind_split=int(split_fraction * num_samples)
 
-# set trainging and test data
+# set training and test data
 x_train = x_data[:ind_split]
 y_train = y_data[:ind_split]
 x_test = x_data[ind_split:]
@@ -103,7 +106,7 @@ model_ridge = Ridge()
 # train on this data
 model_ridge.fit(x_train, y_train)
 #generate predictions
-y_pred_ridge=model_ridge.predict(x_test)
+y_pred_ridge = model_ridge.predict(x_test)
 # results
 print("\nRidge")
 get_performance(y_pred_ridge)
@@ -120,3 +123,8 @@ y_pred_gb = model_gb.predict(x_test)
 print("\nGradient Boosting Trees")
 get_performance(y_pred_gb)
 get_plot(y_pred_gb)
+
+# display predicitons of model with least Mean Squared Error
+print("\nridge regression has least mean squared error")
+print("displaying predictions from ridge regression...")
+showPrediciton(y_pred_ridge)
