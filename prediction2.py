@@ -16,6 +16,7 @@ from sklearn.linear_model import LinearRegression, Ridge, Lasso
 from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import GradientBoostingRegressor
+from sklearn import linear_model
 
 #Modeling Metrics
 from sklearn import metrics
@@ -90,12 +91,15 @@ y_test = y_data[ind_split:]
 
 
 # base tests
+print("\nBase tests")
 y_pred_lag=np.roll(y_test,1)
 get_performance(y_pred_lag)
 get_plot(y_pred_lag)
 
 # test linear regression model
+print("\nLinear regression")
 model_lr = LinearRegression()
+# train on this data
 model_lr.fit(x_train, y_train)
 #generate predictions
 y_pred_lr = model_lr.predict(x_test)
@@ -104,7 +108,9 @@ get_performance(y_pred_lr)
 get_plot(y_pred_lr)
 
 # Ridge Regression¶
+print("\nRidge")
 model_ridge = Ridge()
+# train on this data
 model_ridge.fit(x_train, y_train)
 #generate predictions
 y_pred_ridge=model_ridge.predict(x_test)
@@ -114,7 +120,9 @@ get_plot(y_pred_ridge)
 
 
 # Model #2 - Gradient Boosting Trees
+print("\nGradient Boosting Trees")
 model_gb = GradientBoostingRegressor()
+# train on this data
 model_gb.fit(x_train, y_train)
 # Infer
 y_pred_gb = model_gb.predict(x_test)
