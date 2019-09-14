@@ -1,14 +1,7 @@
 from datetime import datetime
 import csv
 import numpy as np
-import pandas as pd
 import matplotlib.pyplot as plt
-
-#Data import
-from pandas_datareader import data as pdr
-
-# !pip install yfinance --upgrade --no-cache-dir
-# yf.pdr_override()
 
 #Modeling
 from sklearn.linear_model import LinearRegression, Ridge, Lasso
