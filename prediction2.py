@@ -69,7 +69,7 @@ x_data = []
 for x in range(num_samples):
     past32Prices = []
     for x2 in range(x, x + window_size):
-        past32Prices.append(prices[x])
+        past32Prices.append(prices[x2])
     x_data.append(past32Prices)
 
 # get y data
